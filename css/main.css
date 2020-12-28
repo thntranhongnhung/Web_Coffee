@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+}
+
+
+/*nav*/
+
+.nav-menu {
+    padding: 25px;
+}
+
+.fas {
+    color: #F5DEB3;
+}
+
+.menu {
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #F5DEB3;
+    transition: all.4s;
+}
+
+.menu:hover {
+    color: black;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 23px;
+    height: 3px;
+    margin: 5px;
+    transition: all.4s;
+}
+
+.navbar-toggle {
+    outline: none!important;
+}
+
+
+/*header*/
+
+header {
+    height: 100vh;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.5)), url("../img/image1.jpg")no-repeat center center/cover;
+}
+
+
+/*banner*/
+
+.banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+
+/*head*/
+
+.heading {
+    animation-name: slide;
+    animation-duration: 2s;
+}
+
+.main {
+    animation: slide;
+    animation-duration: 2s;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/*About cf*/
+
+#about {
+    background: #000;
+    margin-top: 30px;
+    color: white;
+}
+
+.text {
+    font-size: 28px;
+}
+
+.about-images {
+    position: relative;
+}
+
+.about-img {
+    position: absolute;
+    width: 200px;
+    transition: all 2s ease;
+    opacity: 0.9;
+}
+
+.img-1 {
+    left: 0%;
+    top: 0%;
+}
+
+.img-2 {
+    left: 20%;
+    top: 25%;
+    z-index: 20;
+}
+
+.img-3 {
+    left: 45%;
+    top: 40%;
+    z-index: 0;
+}
+
+.img-4 {
+    left: 40%;
+    top: 0%;
+}
+
+.img-5 {
+    left: 0%;
+    top: 40%;
+}
+
+.about-img:hover {
+    outline: 50px, solid;
+    outline-offset: 32px;
+    transform: scale(1.3) rotate(5deg);
+    z-index: 30;
+    opacity: 2;
+}
+
+.about-images:hover,
+.about-img:not(:hover) {
+    opacity: 2;
+}
+
+.btn {
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #967259;
+    font-size: 25px;
+}
+
+.hvr-right {
+    display: inline-block;
+    vertical-align: middle;
+    transition-duration: 0.5s;
+    transform: perspective(1px), translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    transition-property: color;
+}
+
+.hvr-right:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #F5DEB3;
+    transition-timing-function: ease-out;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+
+.hvr-right:hover,
+.hvr-right:focus,
+.hvr-right:active {
+    color: #634832;
+}
+
+.hvr-right::before,
+.hvr-right:focus:before,
+.hvr-right:active:before {
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transform: scaleX(1);
+}
+
+
+/*tab section*/
+
+.content-4 .nav {
+    justify-content: center;
+    margin: 5%;
+}
+
+.content-4 .nav-tabs {
+    margin: 2px;
+    border: none;
+    border-bottom: 0px;
+    text-align: center;
+    cursor: pointer;
+    background: #000;
+}
+
+.content-4 .tab-item {
+    text-decoration: none;
+    color: #F5DEB3;
+}
+
+.content-4 .tab-item i {
+    display: block;
+    font-size: 65px;
+    padding: 0.4em 1.7em 0em 1.7em;
+}
+
+.content-4 .tab-item span {
+    display: inline-block;
+    padding-bottom: 16px;
+    width: 100%;
+}
+
+.content-4 .tab-item.active {
+    color: #967259;
+}
+
+.tab-content {
+    margin-bottom: 5%;
+    transition: all 4s ease;
+}
+
+
+/*coffee video*/
+
+.most-liked {
+    position: relative;
+    margin-top: 25px;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .8;
+}
+
+.bg-video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.coffee-card {
+    position: relative;
+    box-shadow: 5px 15px 50px #634832;
+    max-width: 420px;
+    transition: all .8s;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-header {
+    color: #000;
+}
+
+.rotate {
+    perspective: 100rem;
+}
+
+.back {
+    position: absolute;
+    top: -100%;
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+    transform: rotateY(180deg);
+    transition: top .8s opacity .4s;
+}
+
+.text-color {
+    color: aliceblue;
+    font-size: 90px;
+}
+
+.back-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rotate:hover .coffee-card {
+    transform: rotateY(180deg);
+}
+
+.rotate:hover .back {
+    opacity: 1;
+    top: 0;
+    user-select: none;
+    pointer-events: auto;
+}
+
+
+/*footer*/
+
+footer {
+    background: #000;
+    padding-top: 2%;
+    margin-top: 15px;
+    position: relative;
+}
+
+.text-center h4 {
+    color: #F5DEB3;
+}
